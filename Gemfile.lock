@@ -12,6 +12,9 @@ GEM
       luffa
       rubyzip (~> 1.1)
       slowhandcuke (~> 0.0.3)
+    clipboard (1.1.1)
+    cpf_faker (1.3.0)
+      clipboard
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -49,6 +52,7 @@ PLATFORMS
 
 DEPENDENCIES
   calabash-android
+  cpf_faker
   cucumber
   faker
 

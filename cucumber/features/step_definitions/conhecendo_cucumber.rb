@@ -1,6 +1,13 @@
 #first
 Dados(/^que estou aprendendo comandos$/) do
-  puts  'Deu certo'#pending # Write code here that turns the phrase above into concrete actions
+  @nome_cliente = Faker::Name.name
+  @cpf= Faker::CPF.numeric
+  @agencia = Faker::Base.numerify('####-#')
+  @conta = Faker::Base.numerify('####-#')
+  puts 'Nome do cliente:' + @nome_cliente #'Deu certo'#pending # Write code here that turns the phrase above into concrete actions
+  puts 'CPF:' + @cpf
+  puts 'Agência:' + @agencia
+  puts 'Conta:' + @conta
 end
 
 Quando(/^escrever os comandos$/) do
