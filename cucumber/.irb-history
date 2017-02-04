@@ -1,9 +1,50 @@
-reinstall_apps
-start_test_server_in_background
-query('*')
 query('Button')
 query('*Button')
 touch('android.widget.Button', id: 'btnHistorico')
 query('android.widget.Button')
 query('android.widget.Button')
+exit
+query('android.widget.Button')
+query('android.widget')
+reinstall_apps
+start_test_server_in_background
+query('android.widget.Button')
+query('android.widget.Button')
+reinstall_apps
+start_test_server_in_background
+touch("android.widget.Button id:'btnHistorico'")
+query('android.widget.Button')
+start_test_server_in_background
+touch("android.widget.Button id:'btnChamaBuscaCEP'")
+start_test_server_in_background
+press_back_button
+start_test_server_in_background
+query(*text)
+start_test_server_in_background
+query(*text)
+query(*Text)
+query(*Text*)
+query('*Text*')
+query('*Text*')
+wait_for_element_exists (id:'txtBC_cep')
+element_exists (id:'txtBC_cep')
+element_exists ('android.support.v7.widget.AppCompatTextView', id:'txtBC_cep')
+wait_for_elements_exist("android.widget.Button marked:'CEP 04363-040'", :timeout => 2)
+wait_for_elements_exist("android.widget.Text marked:'CEP 04363-040'", :timeout => 2)
+wait_for_elements_exist("android.widget.Text marked:'04363-040'", :timeout => 2)
+wait_for_elements_exist("android.widget.Text id:'txtBC_cep'", :timeout => 2)
+wait_for_elements_exist('android.widget.Text', id:'txtBC_cep', :timeout => 2)
+start_test_server_in_background
+query("'android.widget.Text', id:'txtBC_logradouro'")
+query("'android.widget.Text', id:'txtBC_logradouro'")
+query("id:'txtBC_logradouro'")
+query("android.widget.Text, id:'txtBC_logradouro'")
+start_test_server_in_background
+query("android.widget.Text, id:'txtBC_logradouro'")
+query("android.widget.TextView, id:'txtBC_logradouro'")
+query("android.widget.TextView id:'txtBC_logradouro'", :getText)
+start_test_server_in_background
+query("android.widget.TextView id:'txtBC_logradouro'", :getText)
+start_test_server_in_background
+query('*')
 exit
