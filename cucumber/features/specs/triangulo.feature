@@ -6,7 +6,7 @@ Eu, como usuário do app
 Desejo informar os valores dos lados do triângulo
 Para realizar um cálculo e mostrar o tipo do triângulo
 
-@massa
+@massa_triangulo
 Cenario: Calcular lados do triangulo
 
   Dado que eu informo o lado um

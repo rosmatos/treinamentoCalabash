@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    assert (2.16.3)
     awesome_print (1.7.0)
     builder (3.2.3)
     calabash-android (0.9.0)
@@ -51,6 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  assert
   calabash-android
   cpf_faker
   cucumber
