@@ -1,40 +1,3 @@
-query("android.widget.TextView")
-wait_for_element_exists("android.widget.TextView, id:'btnCalular'", :timeout => 10)
-start_test_server_in_background
-start_test_server_in_background
-touch("android.widget.TextView, id:'txtLado1'")
-start_test_server_in_background
-touch("android.widget.TextView, id:'txtLado1'")
-touch("android.widget.TextView, id:'txtLado2'")
-query("android.widget.TextView")
-touch("android.widget.TextView", id: 'txtLado1'))
-touch("android.widget.TextView", id: 'txtLado1')
-touch("android.widget.TextView", id:"txtLado1")
-touch("*, id:'txtLado2'")
-touch("*, id:'txtLado1'")
-touch("*", id:'txtLado1')
-start_test_server_in_background
-query("android.support.v7.widget.AppCompatTextView, id:"txtResultado", :getText)
-query("android.support.v7.widget.AppCompatTextView, id:'txtResultado'", :getText)
-query("*, id:'txtResultado'", :getText)
-query("android.support.v7.widget.AppCompatTextView, id:'txtResultado'", :getText)
-query("*, id:'txtResultado'", :getText)
-query("android.support.v7.widget.AppCompatTextView, id:'txtResultado'", :getText)
-start_test_server_in_background
-clear_text("* id:'txtLado1'")
-clear_text("* id:'txtLado1'")
-exit
-install_app
-reinstall_apps
-start_test_server_in_background
-perform_action('swipe', 'left')
-perform_action('swipe', 'right')
-performAction('list_actions')
-performAction('swipe')
-swipe('right')
-swipe('left'
-performAction('swipe', 'left')
-performAction('swipe', 'right')
 perform_action('swipe', 'right')
 swipe(:right)
 swipe :right
@@ -47,4 +10,41 @@ flick ("id:imgTutorialTitle, :right")
 flick ("id:'imgTutorialTitle', :right")
 flick "id:'imgTutorialTitle'", :right
 flick "view marked:'table_row'", :right
+exit
+reinstall_apps
+start_test_server_in_background
+touch("android.support.v7.widget.AppCompatEditText, id:'txtLado3'")
+query("and, id:'txtLado3'")
+touch("android.support.v7.widget.AppCompatEditText id:'txtLado3'")
+gets
+exit
+reinstall_apps
+start_test_server_in_background
+swipe(right)
+swipe('right')
+pan('right')
+flick_right
+flick_right
+flick_right
+tap_when_element_exists
+start_test_server_in_background
+start_test_server_in_background
+reinstall_apps
+start_test_server_in_background
+exit
+reinstall_apps
+start_test_server_in_background
+query("*EditText")
+start_test_server_in_background
+element_exists
+start_test_server_in_background
+query("android.widget.Button marked:'CONFIRMAR'")
+start_test_server_in_background
+query("*Button")
+query("*Button")
+query("*Text")
+start_test_server_in_background
+query("*Text")
+start_test_server_in_background
+tap_when_element_exists("* id:'etPhoneNumber'")
 exit

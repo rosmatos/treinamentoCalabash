@@ -1,8 +1,9 @@
 require 'calabash-android/calabash_steps'
-
+require 'rspec/expectations'
 
 Dado(/^que eu acesse a home do aplicativo$/) do
   wait_for_element_exists("android.widget.Button marked:'ENTRAR'", :timeout => 10)
+  flick_left
 end
 
 Quando(/^eu clicar em entrar$/) do
@@ -10,23 +11,63 @@ Quando(/^eu clicar em entrar$/) do
 end
 
 Quando(/^informar o telefone$/) do
-  wait_for_element_exists("android.widget.Button marked:'CONTINUAR'", :timeout => 10)
-  touch("* id:'etPhoneNumber'")
-  keyboard_enter_text(Faker::Base.numerify("119########"))
+  tap_when_element_exists("* id:'etPhoneNumber'")
+  keyboard_enter_text(@telefone)
   hide_soft_keyboard
   touch("* id:'btLoginWithPhone'")
 end
 
-Entao(/^serei redirecionado para a tela de cadastro$/) do
-  wait_for_element_exists("android.widget.Button marked:'CONFIRMAR'", :timeout => 10)
-  
-  #if wait_for_element_exists("android.widget.Button marked:'ENTRAR NA MINHA CONTA'", :timeout => 10)
-  #  press_back_button
-  #else
-
-  #end
+Entao(/^serei redirecionado para a tela inicial de cadastro$/) do
+  if element_exists("android.widget.Button marked:'ENTRAR NA MINHA CONTA'")
+    press_back_button
+    tap_when_element_exists("* id:'etPhoneNumber'")
+    keyboard_enter_text(@telefone)
+    hide_soft_keyboard
+    touch("* id:'btLoginWithPhone'")
+  else
+    expect(query("android.widget.Button marked:'CONFIRMAR'")).to_not be_nil
+  end
 end
 
-Entao(/^preencherei os campos iniciais$/) do
-  sleep 05
+Entao(/^preencherei a senha$/) do
+  tap_when_element_exists("android.widget.TextView id:'etPassword'")
+  keyboard_enter_text(@senha)
+  hide_soft_keyboard
+  tap_when_element_exists("android.widget.TextView id:'etConfirmPassword'")
+  keyboard_enter_text(@senha)
+  hide_soft_keyboard
+end
+
+Entao(/^serei redirecionado para a tela final de cadastro$/) do
+  tap_when_element_exists("android.widget.EditText id:'etName'")
+end
+
+Entao(/^preencherei os demais dados$/) do
+  keyboard_enter_text(@nome_completo)
+  if @sexo == "Feminino"
+    query("android.widget.RadioButton id:'rbFemale'",:setChecked=>true)
+  else
+    query("android.widget.RadioButton id:'rbMale'",:setChecked=>true)
+  end
+  tap_when_element_exists("android.widget.EditText id:'etBirthDate'")
+  keyboard_enter_text(@data_nasc)
+  hide_soft_keyboard
+  tap_when_element_exists("android.widget.EditText id:'etEmail'")
+  keyboard_enter_text(@email)
+  hide_soft_keyboard
+  tap_when_element_exists("android.widget.EditText id:'etCep'")
+  keyboard_enter_text(@cep)
+  hide_soft_keyboard
+end
+
+Entao(/^clicarei em Confirmar$/) do
+  touch("android.widget.Button id:'btConfirm'")
+end
+
+Entao(/^serei redirecionado para a tela de nível de escolaridade$/) do
+  expect(query("android.widget.ListView id:'listviewGrade'")).to_not be_nil
+end
+
+Quando(/^clicar em "(.*?)"$/) do |formacao| #Ensino Fundamental
+  tap_when_element_exists("* marked:'#{formacao}'")
 end

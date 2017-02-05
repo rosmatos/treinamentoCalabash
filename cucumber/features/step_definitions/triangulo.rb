@@ -31,6 +31,7 @@ Entao(/^deverá mostrar o tipo de triângulo$/) do
   expect(query("android.support.v7.widget.AppCompatTextView, id:'txtResultado'", :getText)[3]).to eq(@mensagem_triangulo_escaleno)
 end
 
+#expect("this string").to include("is str")
 #Then I wait for "mensagem" to appear
 #perform_action('swipe', 'right')
 #https://developer.xamarin.com/guides/testcloud/calabash/working-with/gestures/
