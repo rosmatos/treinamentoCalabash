@@ -1,3 +1,0 @@
-Before '@massa' do
-  
-end
