@@ -12,10 +12,14 @@ Dado que eu acesse a home do aplicativo
 Quando eu clicar em entrar
 E informar o telefone
 Entao serei redirecionado para a tela inicial de cadastro
-Entao preencherei a senha
-E clicarei em Confirmar
+Quando preencher a senha
+E clicar em Confirmar
 Entao serei redirecionado para a tela final de cadastro
-E preencherei os demais dados
-Entao clicarei em Confirmar
-E serei redirecionado para a tela de nível de escolaridade
-Quando clicar em "Ensino Fundamental"
+Quando preencher os demais dados
+E clicar em Confirmar
+Entao serei redirecionado para a tela de nível de escolaridade
+E clicar em "Ensino Fundamental"
+E clicar em "TELEMARKETING"
+E clicar em "Operador Call Center"
+E clicar em "FINALIZAR"
+Entao verei a tela inicial com o nome do usuário

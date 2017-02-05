@@ -1,5 +1,4 @@
 require 'calabash-android/calabash_steps'
-require 'rspec/expectations'
 
 Dado(/^que eu acesse a home do aplicativo$/) do
   wait_for_element_exists("android.widget.Button marked:'ENTRAR'", :timeout => 10)
@@ -29,7 +28,7 @@ Entao(/^serei redirecionado para a tela inicial de cadastro$/) do
   end
 end
 
-Entao(/^preencherei a senha$/) do
+Entao(/^preencher a senha$/) do
   tap_when_element_exists("android.widget.TextView id:'etPassword'")
   keyboard_enter_text(@senha)
   hide_soft_keyboard
@@ -42,7 +41,7 @@ Entao(/^serei redirecionado para a tela final de cadastro$/) do
   tap_when_element_exists("android.widget.EditText id:'etName'")
 end
 
-Entao(/^preencherei os demais dados$/) do
+Entao(/^preencher os demais dados$/) do
   keyboard_enter_text(@nome_completo)
   if @sexo == "Feminino"
     query("android.widget.RadioButton id:'rbFemale'",:setChecked=>true)
@@ -60,7 +59,7 @@ Entao(/^preencherei os demais dados$/) do
   hide_soft_keyboard
 end
 
-Entao(/^clicarei em Confirmar$/) do
+Entao(/^clicar em Confirmar$/) do
   touch("android.widget.Button id:'btConfirm'")
 end
 
@@ -68,6 +67,11 @@ Entao(/^serei redirecionado para a tela de nível de escolaridade$/) do
   expect(query("android.widget.ListView id:'listviewGrade'")).to_not be_nil
 end
 
-Quando(/^clicar em "(.*?)"$/) do |formacao| #Ensino Fundamental
-  tap_when_element_exists("* marked:'#{formacao}'")
+Entao(/^clicar em "(.*?)"$/) do |texto| #Ensino Fundamental
+  tap_when_element_exists("* marked:'#{texto}'")
+end
+
+Entao(/^verei a tela inicial com o nome do usuário$/) do
+  wait_for_element_exists("android.widget.TextView id:'tvName'", :timeout=>10)
+  expect(query("android.widget.TextView id:'tvName'", :getText)).to include(@nome_completo)
 end
