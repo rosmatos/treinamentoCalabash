@@ -75,3 +75,14 @@ Entao(/^verei a tela inicial com o nome do usuário$/) do
   wait_for_element_exists("android.widget.TextView id:'tvName'", :timeout=>10)
   expect(query("android.widget.TextView id:'tvName'", :getText)).to include(@nome_completo)
 end
+
+Quando(/^clicar em ESCOLHA MAIS UMA$/) do
+  tap_when_element_exists("* id:'btJob2'")
+end
+
+Quando(/^preencher o campo Tempo de Experiência$/) do
+  tap_when_element_exists("android.widget.EditText id:'etExperience'")
+  keyboard_enter_text(@anos_experiencia)
+end
+
+#class FichaCadastro<SitePrism::Page ----
